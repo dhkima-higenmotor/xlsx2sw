@@ -4,12 +4,14 @@ _Automatic Solidworks Parts Generation from Excel Parameter Table_
 
 ## Dependency & Patch
 
+* Solidworks 2023 SP2.1
 * in Miniconda3
 
 * Packages
 ```
 conda install pandas
 conda install openpyxl
+conda install psutil
 pip install pySW
 ```
 

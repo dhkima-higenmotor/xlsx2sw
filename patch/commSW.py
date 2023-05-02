@@ -27,16 +27,16 @@ class commSW:
         swcom = win32com.client.Dispatch("SLDWORKS.Application");
     #
     def openAssy(self, prtNameInp):                                                                  #
-        self.prtNameInn = prtNameInp;
-        self.prtNameInn = self.prtNameInn.replace('\\','/');
+        self.prtName = prtNameInp;
+        self.prtName = self.prtName.replace('\\','/');
         #
-        if os.path.basename(self.prtNameInn).split('.')[-1].lower() == 'sldasm': 
+        if os.path.basename(self.prtName).split('.')[-1].lower() == 'sldasm': 
             pass;
         else:
-            self.prtNameInn+'.SLDASM'
+            self.prtName+'.SLDASM'
         #
         openDoc     = swcom.OpenDoc6;
-        arg1        = win32com.client.VARIANT(pythoncom.VT_BSTR, self.prtNameInn);
+        arg1        = win32com.client.VARIANT(pythoncom.VT_BSTR, self.prtName);
         arg2        = win32com.client.VARIANT(pythoncom.VT_I4, 2);
         arg3        = win32com.client.VARIANT(pythoncom.VT_I4, 1);
         arg5        = win32com.client.VARIANT(pythoncom.VT_BYREF | pythoncom.VT_I4, 2);
@@ -45,16 +45,16 @@ class commSW:
         openDoc(arg1, arg2, arg3, "", arg5, arg6);
     #
     def openPrt(self, prtNameInp):                                                                   #
-        self.prtNameInn = prtNameInp;
-        self.prtNameInn = self.prtNameInn.replace('\\','/');
+        self.prtName = prtNameInp;
+        self.prtName = self.prtName.replace('\\','/');
         #
-        if os.path.basename(self.prtNameInn).split('.')[-1].lower() == 'sldprt': 
+        if os.path.basename(self.prtName).split('.')[-1].lower() == 'sldprt': 
             pass;
         else:
-            self.prtNameInn+'.SLDPRT'
+            self.prtName+'.SLDPRT'
         #
         openDoc     = swcom.OpenDoc6;
-        arg1        = win32com.client.VARIANT(pythoncom.VT_BSTR, self.prtNameInn);
+        arg1        = win32com.client.VARIANT(pythoncom.VT_BSTR, self.prtName);
         arg2        = win32com.client.VARIANT(pythoncom.VT_I4, 1);
         arg3        = win32com.client.VARIANT(pythoncom.VT_I4, 1);
         arg5        = win32com.client.VARIANT(pythoncom.VT_BYREF | pythoncom.VT_I4, 2);
@@ -63,16 +63,16 @@ class commSW:
         openDoc(arg1, arg2, arg3, "", arg5, arg6);
     #
     def openDrw(self, drwNameInp):
-        self.prtNameInn = drwNameInp;
-        self.prtNameInn = self.prtNameInn.replace('\\','/');
+        self.prtName = drwNameInp;
+        self.prtName = self.prtName.replace('\\','/');
         #
-        if os.path.basename(self.prtNameInn).split('.')[-1].lower() == 'slddrw': 
+        if os.path.basename(self.prtName).split('.')[-1].lower() == 'slddrw': 
             pass;
         else:
-            self.prtNameInn+'.SLDDRW'
+            self.prtName+'.SLDDRW'
         #
         openDoc     = swcom.OpenDoc6;
-        arg1        = win32com.client.VARIANT(pythoncom.VT_BSTR, self.prtNameInn);
+        arg1        = win32com.client.VARIANT(pythoncom.VT_BSTR, self.prtName);
         arg2        = win32com.client.VARIANT(pythoncom.VT_I4, 3);
         arg3        = win32com.client.VARIANT(pythoncom.VT_I4, 1);
         arg5        = win32com.client.VARIANT(pythoncom.VT_BYREF | pythoncom.VT_I4, 2);

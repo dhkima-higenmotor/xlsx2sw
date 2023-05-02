@@ -3,6 +3,7 @@ import sys
 import pandas as pd
 from pySW import SW
 import time
+import psutil
 
 # Read Excel File
 INPUT = sys.argv[1]
@@ -14,18 +15,14 @@ SEED_BASENAME = os.path.basename(SEED)
 SEED_DIR = os.path.dirname(SEED)
 NAME = ""
 
-if os.path.exists(SEED+".SLDPRT") == False:
-    print("There is no "+SEED+".SLDPRT file.")
-    sys.exit()
-
-SW.shutSW();
-
-for i in range(len(DF1.index)):
-    # Start SLDWORKS
-    print('starting SLDWORKS')
+# Start Solidworks
+if "SLDWORKS.exe" in (p.name() for p in psutil.process_iter()) == False:
+    print('starting SLDWORKS...')
     SW.startSW();
     time.sleep(10);
-    SW.connectToSW()
+SW.connectToSW()
+
+for i in range(len(DF1.index)):
     # Read SLDPRT
     SW.openPrt(SEED+".SLDPRT");
     # Get Global Variables
@@ -70,8 +67,11 @@ for i in range(len(DF1.index)):
     print(SAVE_FILE3)
     SW.save(SAVE_DIR,SAVE_FILE0,'STL');
     print(SAVE_FILE4)
-    # Shutdown SLDWORKS
-    SW.shutSW();
-    time.sleep(1);
+    # Close Doc
+    SW.closeDoc()
+
+# Shutdown SLDWORKS
+SW.shutSW();
+time.sleep(1);
 
 print("Finished...")
