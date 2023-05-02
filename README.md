@@ -17,6 +17,7 @@ pip install pySW
 
 * Patch
 ```
+where python
 copy /Y .\patch\commSW.py %LOCALAPPDATA%\miniconda3\Lib\site-packages\pySW\commSW.py
 ```
 
