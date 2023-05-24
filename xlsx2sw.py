@@ -4,9 +4,11 @@ import pandas as pd
 from pySW import SW
 import time
 import psutil
+import PySimpleGUI as sg
 
 # Read Excel File
-INPUT = sys.argv[1]
+INPUT = sg.popup_get_file("Select xlsx file",  title="File selector")
+#INPUT = sys.argv[1]
 DF1 = pd.read_excel(INPUT,skiprows=2)
 
 # SEED SLDPRT File Name

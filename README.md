@@ -5,7 +5,7 @@ _Automatic Solidworks Parts Generation from Excel Parameter Table_
 ## Dependency & Patch
 
 * Solidworks 2023 SP2.1
-* in Miniconda3
+* in Miniconda3 by scoop
 
 * Packages
 ```
@@ -29,7 +29,8 @@ copy /Y .\patch\commSW.py %userprofile%\scoop\apps\miniconda3\current\Lib\site-p
 
 ```bash
 cd D:/github/xlsx2sw
-python xlsx2sw.py D:/github/xlsx2sw/example/example.xlsx
+python xlsx2sw.py
+# Select xlsx file on popup
 ```
 
 ## How to use
@@ -42,7 +43,15 @@ python xlsx2sw.py D:/github/xlsx2sw/example/example.xlsx
 
 ```
 cd D:/github/xlsx2sw
-python xlsx2sw.py <path>/A.xlsx
+python xlsx2sw.py
 ```
 
 * Wait to Finish
+
+
+## exe version
+
+* Download Releases exe file.
+* Execute it.
+* Select xlsx file.
+* Wait to Finish.
