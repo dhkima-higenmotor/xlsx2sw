@@ -1,0 +1,5 @@
+# PyInstaller
+build/
+dist/
+xlsx2sw.spec
+xlsx2sw.exe
