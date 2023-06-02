@@ -9,6 +9,8 @@ import PySimpleGUI as sg
 # Read Excel File
 INPUT = sg.popup_get_file("Select xlsx file",  title="File selector")
 #INPUT = sys.argv[1]
+if INPUT is None:
+    sys.exit()
 DF1 = pd.read_excel(INPUT,skiprows=2)
 
 # SEED SLDPRT File Name
