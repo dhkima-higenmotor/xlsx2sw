@@ -12,6 +12,8 @@ INPUT = sg.popup_get_file("Select xlsx file",  title="File selector")
 if INPUT is None:
     sys.exit()
 DF1 = pd.read_excel(INPUT,skiprows=2)
+# Drop row FLAG==NaN
+DF1 = DF1.dropna(subset=["ACTIVATION"])
 
 # SEED SLDPRT File Name
 SEED = os.path.splitext(INPUT)[0]

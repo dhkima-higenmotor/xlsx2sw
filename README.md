@@ -26,6 +26,7 @@ copy /Y .\patch\commSW.py %userprofile%\scoop\apps\miniconda3\current\Lib\site-p
 *  `example.SLDPRT` and `example.xlsx` should be exist in same directory.
 * Base name `example` should be same on `.SLDPRT` and `.xlsx`
 * `xlsx2sw.py` read from 3rd raw in `example.xlsx`
+* Check `ACTIVATION` column in `xlsx2sw.py`...
 
 ```bash
 cd D:/github/xlsx2sw
