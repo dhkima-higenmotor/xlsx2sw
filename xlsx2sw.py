@@ -1,15 +1,16 @@
 import os
 import sys
 import pandas as pd
-from pySW import SW
 import time
 import psutil
-import PySimpleGUI as sg
+from tkinter.filedialog import askopenfilename
+import commSW
+SW = commSW.commSW();
 
 # Read Excel File
-INPUT = sg.popup_get_file("Select xlsx file",  title="File selector")
+INPUT = askopenfilename(title="Select xlsx file", initialdir="D:\\github") 
 #INPUT = sys.argv[1]
-if INPUT is None:
+if INPUT == '':
     sys.exit()
 DF1 = pd.read_excel(INPUT,skiprows=2)
 # Drop row FLAG==NaN

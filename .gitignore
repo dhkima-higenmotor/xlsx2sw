@@ -1,6 +1,7 @@
 # PyInstaller
 build/
 dist/
+__pycache__/
 xlsx2sw.spec
 *.exe
 *.zip
