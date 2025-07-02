@@ -5,14 +5,8 @@ _Automatic Solidworks Parts Generation from Excel Parameter Table_
 ## Dependency & Patch
 
 * Solidworks 2024
-* in Miniconda3 by scoop
+* uv (python package manager)
 
-* Packages
-```
-conda install pandas
-conda install openpyxl
-conda install psutil
-```
 
 ## Test
 
@@ -23,7 +17,7 @@ conda install psutil
 
 ```bash
 cd D:/github/xlsx2sw
-python xlsx2sw.py
+xlsx2sw.bat
 # Select xlsx file on popup
 ```
 
@@ -37,15 +31,8 @@ python xlsx2sw.py
 
 ```
 cd D:/github/xlsx2sw
-python xlsx2sw.py
+uv run xlsx2sw.py
 ```
 
 * Wait to Finish
 
-
-## exe version
-
-* Download Releases exe file.
-* Execute it.
-* Select xlsx file.
-* Wait to Finish.
