@@ -4,7 +4,7 @@ _Automatic Solidworks Parts Generation from Excel Parameter Table_
 
 ## Dependency & Patch
 
-* Solidworks 2024
+* Solidworks
 * uv (python package manager)
 
 
